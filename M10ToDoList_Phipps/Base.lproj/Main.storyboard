@@ -73,7 +73,7 @@
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jl5-SM-6kW"/>
-                        <color key="backgroundColor" red="0.63023511629999995" green="0.89813547039999997" blue="0.8161628769" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.8487546351333467" green="0.70912364069485512" blue="0.89813547039999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Jl5-SM-6kW" firstAttribute="trailing" secondItem="kOs-Md-z4F" secondAttribute="trailing" constant="16" id="AaU-5G-Iqx"/>
                             <constraint firstItem="kOs-Md-z4F" firstAttribute="leading" secondItem="Jl5-SM-6kW" secondAttribute="leading" constant="16" id="FW0-Pg-ffq"/>

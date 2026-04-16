@@ -20,13 +20,12 @@ class AddViewController: UIViewController {
     
     
     @IBAction func saveButton(_ sender: Any) {
+        
         guard let text = inputField.text else{
             return
         }
-        listVC?.toDoList.append(text) //Optional chaining
-        
-        listVC?.tableView.reloadData()
-        
+        let center = NotificationCenter.default
+        center.post(name: .toDoDidInsert, object: nil, userInfo: [Key.todo: text])
         self.dismiss(animated: true)
     }
     
@@ -37,14 +36,9 @@ class AddViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+}
 
+extension NSNotification.Name{
+    static let toDoDidInsert = NSNotification.Name("toDoDidInsert")
 }

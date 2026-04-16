@@ -14,20 +14,26 @@ class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination.children.first as? AddViewController{
-            vc.listVC = self
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let center = NotificationCenter.default
+        center.addObserver(forName: .toDoDidInsert, object: nil, queue: .main) { noti in
+            if let todo = noti.userInfo?[Key.todo] as? String{
+                self.toDoList.append(todo)
+                self.tableView.reloadData()
+            }
+        }
     }
     
     
 
 
+}
+
+enum Key{
+    case todo
 }
 
 extension ListViewController: UITableViewDataSource{
